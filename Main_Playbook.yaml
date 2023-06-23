@@ -1,0 +1,13 @@
+---
+- name: Main Playbook
+  hosts: all
+  user: mouchel
+  become: true
+  become_user: root
+  gather_facts: false
+
+- name: Include Apache
+  import_playbook: apache2php.yaml
+
+- name: Include MySQL
+  import_playbook: mysqlDB.yaml
